@@ -20,7 +20,7 @@ body {
 .svg-image {
   position: absolute; /* Absolute positioning for bottom left */
   bottom: 0; /* Align to bottom edge */
-  opacity: 50%;
+  opacity: 40%;
 }
 
 
@@ -57,14 +57,19 @@ body {
 
 
 .regular-content {
-  width: 50%; /* Adjust width as needed */
+  width: 75%; /* Adjust width as needed */
+  height: 60vh;
   margin: 0 auto; /* Centers horizontally */
-  padding: 20px; /* Add padding as needed */
   background-color: #fff;
-  margin-top:20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 2rem;
+  
+  margin-bottom: 30px;
+  padding: 2rem; 
+  
+  display: column;
+  justify-content: center;
+  
 }
 
 
@@ -110,4 +115,44 @@ body {
   50% { transform: translateY(10px); }
   75% { transform: translateY(-5px); }
   100% { transform: translateY(0); }
+}
+
+
+h1{
+  font-family: "Lato", sans-serif;
+  text-align: left;
+}
+
+h3{
+  font-family: "Lato", sans-serif;
+  text-align: left;
+}
+
+.image-container{
+  margin: 0 auto; /* Centers horizontally */
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 2rem;
+  justify-content: center;
+  background-image: url("./img/diva.JPG");
+  background-size: cover;
+  background-position: center;  /* Example: Centers the image */
+  width: 80%;  /* Adjust this value to change the width */
+  height: 50%;
+}
+
+
+.logo-container{
+  display: flex;
+  margin: 0 auto; /* Centers horizontally */
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 2rem;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;  /* Example: Centers the image */
+  width: 80%;  /* Adjust this value to change the width */
+  height: 50%;
 }
