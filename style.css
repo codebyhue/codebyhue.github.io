@@ -100,7 +100,7 @@ body {
 #scrollscale{
   width: 55px;
   left: 46%;
-  bottom: 10%;
+  bottom: 25%;
   animation: shake 3.0s linear infinite;  /* Start animation on page load */
 }
 
