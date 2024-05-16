@@ -1,81 +1,99 @@
+
 body {
-  font-family: sans-serif;
+  min-height: 120vh;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to top, #ffdf5a 0%, #ff9356 50%, #ff7898 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  display: flex; /* Enable flexbox on body for full viewport centering */
+  flex-direction: column; /* Stacks divs vertically */
 }
+
+.fixed-background {
+  position: fixed; /* Keeps the background fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Fills viewport height */
+  background: linear-gradient(to bottom, #f9d423, #f83600); /* Replace with your colors */
+  z-index: -1; /* Ensures background is behind content */
+}
+
+.svg-image {
+  position: absolute; /* Absolute positioning for bottom left */
+  bottom: 0; /* Align to bottom edge */
+  opacity: 50%;
+}
+
 
 .container {
-  text-align: center;
-  padding: 50px;
-  max-width: 600px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex; /* Enable flexbox for arranging divs within container */
+  flex-direction: column; /* Stacks divs vertically */
+  
 }
 
-img {
-  width: 150px;
-  margin-bottom: 20px;
+
+.card {
+  padding: 10px;
 }
 
-h1 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
 
-p {
-  font-size: 1em;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-.progress-bar {
-  height: 10px;
-  background-color: #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-
-.progress {
-  height: 100%;
-  background-color: #ff7898;
-  width: 70%;
-  animation: progress 5s linear infinite;
-}
-
-@keyframes progress {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-form {
+#center {
   display: flex;
   justify-content: center;
 }
 
-input[type="email"] {
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 10px;
+
+#logosize{
+
+  max-width: 40%;
+  max-height: 100vh;
+  margin: auto;
+  position: absolute; /* Absolute positioning for bottom left */
+  justify-content: center;
 }
 
-button[type="submit"] {
-  background-color: #ff7898;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+
+
+
+
+
+.regular-content {
+  width: 50%; /* Adjust width as needed */
+  margin: 0 auto; /* Centers horizontally */
+  padding: 20px; /* Add padding as needed */
+  background-color: #fff;
+  margin-top:20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
 }
+
+
+
+
+.logo-content{
+  width: fit-content; /* Adjust width as needed */
+  max-width: 80%; /* Set a maximum width for responsiveness */
+  margin: 0 auto; /* Centers horizontally on all screen sizes */
+  padding: 20px; /* Add padding as needed */
+  margin-top:300px;
+  width: 900px;
+}
+
+#appear-on-scroll {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: relative;  /* Needed for pseudo-element positioning */
+  
+}
+
+#appear-on-scroll::before {
+  height: 50vh;
+  content: "";
+  display: block;
+  position: absolute;  /* Absolute positioning within the div */
+  top: 0;
+  left: 0;
+  width: 100%;  /* Match the div width */
+ /* Adjust height to push content further */
+}
+
