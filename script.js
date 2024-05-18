@@ -21,9 +21,26 @@ function createOptions() {
   
     // Replace with your actual list of 20 options
     const options = [
-      "Option 1",
-      "Option 2",
-      "Option 3",
+      "Baked",
+      "Polo Beach Club",
+      "Lake Club Gh",
+      "Taag Ghana",
+      "La’Kia Collection",
+      "Finessed by Frempz",
+      "Butterfly Swimwear",
+      "Djoulde",
+      "Minu Minks",
+      "Phil & Joe",
+      "Niiney Beauty Store",
+      "Keshia Danso",
+      "Prikels Hair Ltd",
+      "Nadsglam",
+      "KayLuxe Extensions",
+      "Swims by Didi",
+      "Milirv",
+      "JayClaud Beauty",
+      "Bold Pieces",
+      "KS Jewelry",
       // ... all 20 options within quotes
     ];
   
@@ -75,7 +92,7 @@ function createOptions() {
 
 
 
-
+/*
 const form = document.getElementById('myForm');
 
 form.addEventListener('submit', function(event) {
@@ -93,7 +110,7 @@ form.addEventListener('submit', function(event) {
   }
 
   // Replace with your deployed Google Apps Script URL
-  const submitToSheetUrl = 'https://script.google.com/macros/s/AKfycbwLW3XljduYDqAak2NM4DrjwabVNBjHT-fZ__7_CBZovgAPU2BM7MNAOpN96eSYVSqI/exec';
+  /const submitToSheetUrl = 'https://script.google.com/macros/s/AKfycbwLW3XljduYDqAak2NM4DrjwabVNBjHT-fZ__7_CBZovgAPU2BM7MNAOpN96eSYVSqI/exec';
 
   fetch(submitToSheetUrl, {
     method: 'POST',
@@ -116,3 +133,29 @@ form.addEventListener('submit', function(event) {
     alert('An unexpected error occurred. Please try again later.');
   });
 });
+
+*/
+
+
+const form1 = document.getElementById('myForm');
+const selectedOptionsField = document.getElementById('selectedOptionsField');
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwLW3XljduYDqAak2NM4DrjwabVNBjHT-fZ__7_CBZovgAPU2BM7MNAOpN96eSYVSqI/exec'
+
+const form = document.forms['contact-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  const selectedButtons = [...document.querySelectorAll('.options-container .selected')];
+
+  // Extract text content of selected buttons
+  const selectedOptions = selectedButtons.map(button => button.textContent).join(', ');
+
+  // Update hidden field value
+  selectedOptionsField.value = selectedOptions;
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thank you! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+}) 
