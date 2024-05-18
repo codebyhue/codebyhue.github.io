@@ -15,16 +15,25 @@ window.addEventListener("DOMContentLoaded", function() {
   });
   
   
-  const optionsContainer = document.querySelector('.options-container');
-
-  // Replace with your actual list of 20 options
-  const options = [
-    "Option 1",
-    "Option 2",
-    "Option 3",
-    // ... all 20 options within quotes
-  ];
+// Function to create option buttons dynamically
+function createOptions() {
+    const optionsContainer = document.querySelector('.options-container');
   
+    // Replace with your actual list of 20 options
+    const options = [
+      "Option 1",
+      "Option 2",
+      "Option 3",
+      // ... all 20 options within quotes
+    ];
+  
+    options.forEach(option => {
+      const button = createOptionButton(option);
+      optionsContainer.appendChild(button);
+    });
+  }
+  
+  // Function to create a button with selection handling and data attribute
   function createOptionButton(optionText) {
     const button = document.createElement('button');
     button.textContent = optionText;
@@ -53,18 +62,57 @@ window.addEventListener("DOMContentLoaded", function() {
     return button;
   }
   
-  options.forEach(option => {
-    const optionButton = createOptionButton(option);
-    optionsContainer.appendChild(optionButton);
+
+    // Call the function to create options on page load
+    createOptions();
+
+
+
+
+
+
+
+
+
+
+
+const form = document.getElementById('myForm');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const selectedOptions = [...document.querySelectorAll('.options-container .selected')] // Assuming selected buttons have "selected" class
+      .map(button => button.textContent)
+      .join(', ');
+
+  if (!name || !email) { // Check for required fields
+    alert('Please enter your name and email address.');
+    return; // Prevent further processing if required fields are empty
+  }
+
+  // Replace with your deployed Google Apps Script URL
+  const submitToSheetUrl = 'https://script.google.com/macros/s/AKfycbwLW3XljduYDqAak2NM4DrjwabVNBjHT-fZ__7_CBZovgAPU2BM7MNAOpN96eSYVSqI/exec';
+
+  fetch(submitToSheetUrl, {
+    method: 'POST',
+    mode: 'no-cors', // Disable CORS for this request (consider server-side CORS for production)
+    body: JSON.stringify({
+      name,
+      email,
+      selectedOptions
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      alert('Data submitted successfully!');
+    } else {
+      alert('Error submitting data!');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('An unexpected error occurred. Please try again later.');
   });
-  
-  // Add form submission logic (e.g., using JavaScript or server-side scripting)
-  
-  // Example (assuming server-side processing)
-  const submitButton = document.querySelector('.submit-btn');
-  submitButton.addEventListener('click', function(event) {
-    // Collect form data and send to server using AJAX or other methods
-    // ... code for data processing and submission
-  });
-  
-  
+});
