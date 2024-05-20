@@ -137,6 +137,8 @@ form.addEventListener('submit', function(event) {
 */
 
 
+
+const progressContainer = document.getElementById('progress-container');
 const form1 = document.getElementById('myForm');
 const selectedOptionsField = document.getElementById('selectedOptionsField');
 
@@ -153,9 +155,17 @@ form.addEventListener('submit', e => {
 
   // Update hidden field value
   selectedOptionsField.value = selectedOptions;
-
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-  .then(response => alert("Thank you! your form is submitted successfully." ))
-  .then(() => { window.location.reload(); })
+  progressContainer.style.display = 'flex';
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return window.location.href = "complete.html"; // Redirect to new page
+  })
   .catch(error => console.error('Error!', error.message))
-}) 
+  .finally(() => progressContainer.style.display = 'none'); // Hide progress circle on finish
+
+
+})
+

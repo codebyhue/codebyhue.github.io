@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    overflow: hidden;
+  }
+  
+  body {
+    background-color: #333;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  #confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .card {
+    margin-top:00px;
+    background-color: #fff;
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 1em;
+  }
+  
+  .card p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .confetti {
+    position: absolute;
+    top: 0;
+    font-size: 1.6rem;
+    animation: confetti-fall linear 5s infinite;
+  }
+  
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(-100%) rotate(0);
+    }
+    100% {
+      transform: translateY(100vh) rotate(180deg);
+    }
+  }
+
+  .logo-box{
+    width: fit-content; /* Adjust width as needed */
+    max-width: 80%; /* Set a maximum width for responsiveness */
+    margin: 0 auto; /* Centers horizontally on all screen sizes */
+    padding: 20px; /* Add padding as needed */
+    margin-top:0vh;
+    width: 900px;
+  }
+
+
+
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-icon {
+    margin: 0 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #36251d  ;
+}
+.contact-icon:hover {
+    color: #ddd;
+}
+
+
+a {
+  text-decoration: none;
+  color: black;
+}

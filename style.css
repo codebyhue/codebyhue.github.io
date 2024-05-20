@@ -272,3 +272,32 @@ h4{
 .submit-btn:hover {
   background-color: #aa921b; /* Darker green on hover */
 }
+
+
+#progress-container {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+  z-index: 999; /* Ensure it's displayed above other elements */
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 10px solid #f3f3f3; /* Light gray border */
+  border-top-color: #ed52d9; /* Blue color for the moving part */
+  margin: auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
