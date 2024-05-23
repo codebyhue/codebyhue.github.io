@@ -117,7 +117,8 @@ window.onload = function() {
     return spline.sort();
   }
 
-  // Create the overarching container
+  // Create the overarching container'
+
   var container = document.createElement('div');
   container.style.position = 'fixed';
   container.style.top      = '0';
