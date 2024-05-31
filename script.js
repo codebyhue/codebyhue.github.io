@@ -30,6 +30,7 @@ function createOptions() {
       "Lake Club Gh",
       "KayLuxe Extensions",
       "Swims by Didi",
+      "Keshia Danso",
       "Minu Minks",
       "Niiney Beauty Store",
       "Butterfly Swimwear",
@@ -40,7 +41,8 @@ function createOptions() {
       "La’Kia Collection",
       "Bold Pieces",
       "KS Jewelry",
-      "Keshia Danso",
+      "Mesa Ghana",
+      "Nayas bikinis",
       // ... all 20 options within quotes
     ];
   
