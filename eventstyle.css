@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  .event-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .event-card {
+    width: 100%;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+  }
+  
+  .card-column {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .date-column {
+    background-color: #cef8e4;
+    /* Pastel color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 0.5;
+    /* Make date column smaller */
+    padding: 20px;
+    /* Added padding here */
+    border-radius: 8px;
+  }
+  
+  .event-column {
+    padding-left: 20px;
+    flex: 1.5;
+    /* Make event column wider */
+  }
+  
+  .rsvp-column {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0.5;
+    /* Maintain the same width */
+  }
+  
+  .event-card a {
+    display: block;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .event-card {
+      flex-direction: column;
+    }
+  
+    .card-column {
+      flex: none;
+    }
+  }
