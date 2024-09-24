@@ -1,76 +1,78 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-  }
-  
-  .event-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .event-card {
-    width: 100%;
-    margin: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-  }
-  
-  .card-column {
-    flex: 1;
-    padding: 10px;
-  }
-  
-  .date-column {
-    background-color: #cef8e4;
-    /* Pastel color */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex: 0.1;
-    /* Make date column smaller */
-    padding: 20px;
-    /* Added padding here */
-    border-radius: 8px;
-  }
-  
-  .event-column {
-    padding-left: 20px;
-    flex: 1.5;
-    /* Make event column wider */
-  }
-  
-  .rsvp-column {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 0.5;
-    /* Maintain the same width */
-  }
-  
-  .event-card a {
-    display: block;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    width: 100%;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .event-card {
-      flex-direction: column;
-    }
-  
-    .card-column {
-      flex: none;
-    }
-  }
+.container {
+  max-width: 900px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Add padding around the container */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header img {
+  max-width: 150px; /* Adjust the maximum width for the logo */
+  height: auto;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+
+.event-card {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding-left: 20px; /* Add left padding */
+  padding-right: 20px; /* Add right padding */
+}
+
+.event-card .event-date {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+  color: #333;
+}
+
+.event-card .event-details {
+  flex-grow: 1;
+}
+
+.event-card .event-details h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.event-card .event-details p {
+  font-size: 12px;
+  margin-bottom: 0;
+  color: #666;
+  margin-right: 0; /* Remove right margin */
+}
+
+.event-card .event-actions {
+  margin-left: auto;
+}
+
+.event-card .event-actions button {
+  background-color: #3498db;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.event-card .event-actions button.sold-out {
+  background-color: #ccc;
+  color: #666;
+  cursor: default;
+} 
