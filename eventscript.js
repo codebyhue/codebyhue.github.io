@@ -1,21 +1,14 @@
 // Event data structure
 const events = [
     {
-        name: "Bergen International Film Festival",
-        date: "Today",
-        time: "17:00",
-        venue: "Bergen International Film Festival",
+        name: "Brielle Talks: Beauty Without Limits @ British Beauty Week",
+        date: "October 24 2024",
+        time: "6 PM – 10 PM",
+        venue: "art’otel London Hoxton",
         description: "Films from all over the world gather all film enthusiasts for unique moments at the Bergen International Film Festival."
     },
     // Add more events here
 
-        {
-        name: "Bergen International Film Festival",
-        date: "Today",
-        time: "17:00",
-        venue: "Bergen International Film Festival",
-        description: "Films from all over the world gather."
-    },
 ];
 
 // Function to create an event card
@@ -46,7 +39,7 @@ function createEventCard(event) {
     rsvpButton.classList.add('btn', 'btn-primary');
     rsvpButton.href = `event-details.html?name=${event.name}&date=${event.date}&time=${event.time}&venue=${event.venue}`;
     rsvpButton.textContent = 'RSVP →';
-
+    
     cardBody.appendChild(title);
     cardBody.appendChild(dateAndTime);
     cardBody.appendChild(venue);
