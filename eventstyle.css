@@ -93,10 +93,16 @@ body{
   background-color: #FAF9F6;
   border: 2px solid #ab0652;
   color: #ab0652;
-  padding: 8px 12px;
+  padding: 8px 12px;  
   border-radius: 5px;
   cursor: pointer;
 }
+.btn-primary:hover {
+  background-color: #ab0652;
+  border: 2px solid #ab0652;
+}
+
+
 
 .event-card .event-actions button.sold-out {
   background-color: #ccc;

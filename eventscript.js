@@ -5,7 +5,7 @@ const events = [
         date: "October 24 2024",
         time: "6 PM – 10 PM",
         venue: "art’otel London Hoxton",
-        description: "Films from all over the world gather all film enthusiasts for unique moments at the Bergen International Film Festival."
+        description: "Join us for “Brielle Talks: Beauty Without Limits” during British Beauty Week—a special panel conversation celebrating our two-year anniversary and the launch of our newest products. Attendees will get exclusive early access to shop, enjoy exciting discounts, and watch the premiere of our product documentary."
     },
     // Add more events here
 
@@ -39,6 +39,11 @@ function createEventCard(event) {
     rsvpButton.classList.add('btn', 'btn-primary');
     rsvpButton.href = `event-details.html?name=${event.name}&date=${event.date}&time=${event.time}&venue=${event.venue}`;
     rsvpButton.textContent = 'RSVP →';
+
+    rsvpButton.addEventListener('click', () => {
+        const url = `event-details.html?name=${event.name}&date=${event.date}&time=${event.time}&venue=${event.venue}`;
+        window.location.href = url;
+      });
     
     cardBody.appendChild(title);
     cardBody.appendChild(dateAndTime);
