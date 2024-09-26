@@ -4,6 +4,32 @@
   padding: 20px; /* Add padding around the container */
 }
 
+body{
+  background-color: #f7e4e8;
+}
+
+.carousel-item img {  
+  height: 600px; /* Adjust the height as needed */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-item .carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  color: #fff;
+  text-align: center;
+}
+
+.carousel-item .carousel-caption h5 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
 .header {
   text-align: center;
   margin-bottom: 20px;
@@ -22,14 +48,14 @@
 
 .event-card {
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #f5f5f5;
+  background-color: #FAF9F6;
   padding-left: 20px; /* Add left padding */
   padding-right: 20px; /* Add right padding */
 }
@@ -62,10 +88,10 @@
   margin-left: auto;
 }
 
-.event-card .event-actions button {
-  background-color: #3498db;
-  border: none;
-  color: #fff;
+.btn-primary {
+  background-color: #FAF9F6;
+  border: 2px solid #ab0652;
+  color: #ab0652;
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
@@ -76,3 +102,20 @@
   color: #666;
   cursor: default;
 } 
+
+.navbar-brand {
+  display: block;
+  margin: 0 auto; /* Center the logo horizontally */
+}
+
+.navbar-brand img {
+  height: 30px; /* Adjust the logo height as needed */
+
+}
+
+.upcoming-events-title {
+  font-size: 36px; /* Adjust the font size as needed */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}

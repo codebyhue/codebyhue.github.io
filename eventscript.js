@@ -42,10 +42,10 @@ function createEventCard(event) {
     venue.classList.add('card-text');
     venue.textContent = `${event.venue}`;
 
-    const rsvpButton = document.createElement('a');
+    const rsvpButton = document.createElement('button');
     rsvpButton.classList.add('btn', 'btn-primary');
     rsvpButton.href = `event-details.html?name=${event.name}&date=${event.date}&time=${event.time}&venue=${event.venue}`;
-    rsvpButton.textContent = 'RSVP';
+    rsvpButton.textContent = 'RSVP →';
 
     cardBody.appendChild(title);
     cardBody.appendChild(dateAndTime);
@@ -61,4 +61,10 @@ function createEventCard(event) {
 const eventList = document.getElementById('eventList');
 events.forEach(event => {
     eventList.appendChild(createEventCard(event));
+});
+
+$(document).ready(function() {
+    $('#carouselExampleIndicators').carousel({
+        interval: 500 // Set the slide interval to 1.5 seconds
+    });
 });
