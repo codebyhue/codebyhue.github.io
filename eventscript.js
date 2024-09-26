@@ -1,3 +1,12 @@
+
+
+$(document).ready(function() {
+    $('#carouselExampleIndicators').carousel({
+        interval: 3000 // Set the slide interval to 3 seconds
+    });
+});
+
+
 // Event data structure
 const events = [
     {
@@ -59,10 +68,4 @@ function createEventCard(event) {
 const eventList = document.getElementById('eventList');
 events.forEach(event => {
     eventList.appendChild(createEventCard(event));
-});
-
-$(document).ready(function() {
-    $('#carouselExampleIndicators').carousel({
-        interval: 2500 // Set the slide interval to 1.5 seconds
-    });
 });
