@@ -63,6 +63,6 @@ events.forEach(event => {
 
 $(document).ready(function() {
     $('#carouselExampleIndicators').carousel({
-        interval: 500 // Set the slide interval to 1.5 seconds
+        interval: 3000 // Set the slide interval to 1.5 seconds
     });
 });
