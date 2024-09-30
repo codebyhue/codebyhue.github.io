@@ -1,3 +1,6 @@
+
+//-------------------------------------------------------//
+
 // Get event details from URL parameters
 const urlParams = new URLSearchParams(window.location.search);
 const eventName = urlParams.get('name');
@@ -5,6 +8,8 @@ const eventDate = urlParams.get('date');
 const eventTime = urlParams.get('time');
 const eventVenue = urlParams.get('venue');
 const eventDescription = urlParams.get('description'); // Assuming you added a description parameter
+const eventImage = urlParams.get('image');
+const eventImageElement = document.querySelector('.event-details img');
 
 // Update the page title
 document.title = `${eventName}`;
@@ -15,6 +20,7 @@ document.getElementById('eventDate').textContent = eventDate;
 document.getElementById('eventTime').textContent = eventTime;
 document.getElementById('eventVenue').textContent = eventVenue;
 document.getElementById('eventDescription').textContent = eventDescription;
+eventImageElement.src = eventImage;
 
 
 // Get a reference to the country select element
@@ -41,35 +47,3 @@ fetch('https://restcountries.com/v3.1/all')
         console.error('Error fetching countries:', error);
     });
 
-
-    
-// Handle RSVP form submission
-const rsvpForm = document.getElementById('rsvpForm');
-rsvpForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    // Get form values
-    const fullName = document.getElementById('fullName').value;
-    const email = document.getElementById('email').value;
-    const phoneNumber = document.getElementById('phoneNumber').value;
-    const country = document.getElementById('country').value;
-    const instagramHandle = document.getElementById('instagramHandle').value;
-    const jobBusiness = document.getElementById('jobBusiness').value;
-    const attendance = document.querySelector('input[name="attendance"]:checked').value;
-    const maybeResponseTime = document.getElementById('maybeResponseTime').value;
-
-    // Process RSVP data (e.g., send to a server, store locally)
-    console.log('RSVP Data:', {
-        fullName,
-        email,
-        phoneNumber,
-        country,
-        instagramHandle,
-        jobBusiness,
-        attendance,
-        maybeResponseTime
-    });
-
-    // Redirect to confirmation page after successful RSVP
-    window.location.href = 'confirmation.html';
-});

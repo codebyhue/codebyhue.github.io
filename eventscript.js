@@ -14,7 +14,8 @@ const events = [
         date: "October 24 2024",
         time: "6 PM – 10 PM",
         venue: "art’otel London Hoxton",
-        description: "Join us for “Brielle Talks: Beauty Without Limits” during British Beauty Week—a special panel conversation celebrating our two-year anniversary and the launch of our newest products. Attendees will get exclusive early access to shop, enjoy exciting discounts, and watch the premiere of our product documentary."
+        description: "Join us for “Brielle Talks: Beauty Without Limits” during British Beauty Week—a special panel conversation celebrating our two-year anniversary and the launch of our newest products. Attendees will get exclusive early access to shop, enjoy exciting discounts, and watch the premiere of our product documentary.",
+        image: "img/BBW-Events-Header-5.png",
     },
     // Add more events here
 
@@ -46,11 +47,11 @@ function createEventCard(event) {
 
     const rsvpButton = document.createElement('button');
     rsvpButton.classList.add('btn', 'btn-primary');
-    rsvpButton.href = `event-details.html?name=${event.name}&date=${event.date}&time=${event.time}&venue=${event.venue}`;
+    rsvpButton.href = `event-details.html?name=${event.name}&date=${event.date}&time=${event.time}&venue=${event.venue}&description=${event.description}&image=${event.image}`;
     rsvpButton.textContent = 'RSVP →';
 
     rsvpButton.addEventListener('click', () => {
-        const url = `event-details.html?name=${event.name}&date=${event.date}&time=${event.time}&venue=${event.venue}`;
+        const url = `event-details.html?name=${event.name}&date=${event.date}&time=${event.time}&venue=${event.venue}&description=${event.description}&image=${event.image}`;
         window.location.href = url;
       });
     

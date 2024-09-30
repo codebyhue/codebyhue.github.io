@@ -1,0 +1,213 @@
+.container {
+    max-width: 1100px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+  }
+  
+  body{
+    background-color: #f7e4e8;
+    background-image: url("img/bback.svg");
+  }
+  
+  .carousel-item img {  
+    height: 600px; /* Adjust the height as needed */
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .carousel-item .carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    color: #fff;
+    text-align: center;
+  }
+  
+  .carousel-item .carousel-caption h5 {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .header img {
+    max-width: 150px; /* Adjust the maximum width for the logo */
+    height: auto;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  
+  .event-card {
+    margin-bottom: 20px;
+    border: 2px solid #ab0652;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #FAF9F6;
+    padding-left: 20px; /* Add left padding */
+    padding-right: 20px; /* Add right padding */
+  }
+  
+  .event-card .event-date {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333;
+  }
+  
+  .event-card .event-details {
+    flex-grow: 1;
+  }
+  
+  .event-card .event-details h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .event-card .event-details p {
+    font-size: 12px;
+    margin-bottom: 0;
+    color: #666;
+    margin-right: 0; /* Remove right margin */
+  }
+  
+  .event-card .event-actions {
+    margin-left: auto;
+  }
+  
+  .btn-primary {
+    background-color: #FAF9F6;
+    border: 2px solid #ab0652;
+    color: #ab0652;
+    padding: 8px 12px;  
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background-color: #ab0652;
+    border: 2px solid #ab0652;
+  }
+  
+  
+  
+  .event-card .event-actions button.sold-out {
+    background-color: #ccc;
+    color: #666;
+    cursor: default;
+  } 
+  
+  .navbar-brand {
+    display: block;
+    margin: 0 auto; /* Center the logo horizontally */
+  }
+  
+  .navbar-brand img {
+    height: 30px; /* Adjust the logo height as needed */
+  
+  }
+  
+  .upcoming-events-title {
+    font-size: 36px; /* Adjust the font size as needed */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ab0652;
+  }
+
+  .form-control::-webkit-input-placeholder { /* For Chrome, Safari, Edge, Opera */
+    color: #ab0652;
+}
+
+.form-control:-moz-placeholder { /* For Firefox */
+    color: #ab0652;
+    opacity: 1; /* Override Firefox's default opacity */
+}
+
+.form-control::-moz-placeholder { /* For older Firefox */
+    color: #ab0652;
+    opacity: 1; /* Override Firefox's default opacity */
+}
+
+.form-control:-ms-input-placeholder { /* For Internet Explorer */
+    color: #ab0652;
+}
+
+.form-control::-ms-input-placeholder { /* For Microsoft Edge */
+    color: #ab0652;
+}
+
+
+.rsvp-form {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.input-group {
+    width: 100%;
+}
+
+.input-group-prepend .input-group-text {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    padding: 10px;
+}
+
+
+.event-details {
+    background-color: transparent; /* Set background to transparent */
+    padding: 15px;
+    margin-bottom: 20px; /* Add bottom margin to create space after the details */
+}
+
+.event-details .card-text {
+    font-weight: bold; /* Make text bold */
+}
+
+.event-details .card-text.text-muted {
+    font-size: 0.8rem; /* Make details smaller */
+    margin-bottom: 5px
+}
+
+.card-body{
+    width: 100%;
+    border: 2px solid #ab0652;
+    border-radius: 5px;
+}
+
+.event-details {
+   
+}
+
+.event-details .row {
+    margin: 2; /* Remove margin from the row */
+}
+
+.event-details .card-text {
+    margin: 0; /* Remove margin from the text elements */
+}
