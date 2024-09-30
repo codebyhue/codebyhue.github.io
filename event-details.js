@@ -80,6 +80,10 @@ form.addEventListener('submit', e => {
   formData.append('country', countryField.value);
   formData.append('instagramHandle', instagramHandleField.value);
   formData.append('jobBusiness', jobBusinessField.value);
+  formData.append('eventName', eventName);
+
+const additionalVariable = "Hello, World!";
+formData.append('customData', additionalVariable);
 
   let attendanceValue;
   if (attendanceYesRadio.checked) {
