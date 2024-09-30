@@ -53,7 +53,7 @@ fetch('https://restcountries.com/v3.1/all')
 
 
 
-
+const progressContainer = document.getElementById('progress-container');
 
 const form = document.getElementById('rsvpForm');
 
@@ -95,15 +95,17 @@ form.addEventListener('submit', e => {
 
     // Log the form data to the console
     console.log('Form Data:', formData);
-
+    progressContainer.style.display = 'flex';
   fetch(scriptURL, {method: 'POST', body: formData })
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    //return window.location.href = "google.com"; // Redirect to new page
+    return window.location.href = "rsvpcomplete.html"; // Redirect to new page
   })
   .catch(error => console.error('Error!', error.message))
+  .finally(() => progressContainer.style.display = 'none'); // Hide progress circle on finish
+
 
 
 })
