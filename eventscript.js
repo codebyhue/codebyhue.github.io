@@ -17,6 +17,7 @@ const events = [
         description: "Join us for “Brielle Talks: Beauty Without Limits” during British Beauty Week—a special panel conversation celebrating our two-year anniversary and the launch of our newest products. Attendees will get exclusive early access to shop, enjoy exciting discounts, and watch the premiere of our product documentary.",
         image: "img/BBW-Events-Header-5.png",
     },
+
     // Add more events here
 
 ];
