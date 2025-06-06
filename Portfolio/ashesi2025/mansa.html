@@ -51,7 +51,7 @@
     const folderId = "1LGsMd8eSuEQDwnxwaM5Gd_oOQXOEMFfO";
     const apiKey = "AIzaSyDJe7_geLOE5s8tmrmg96Sl992IlhznDmg";
 
-    const apiUrl = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+mimeType+contains+'image/'&key=${apiKey}&fields=files(id,name,mimeType)`;
+    const apiUrl = `https://www.googleapis.com/drive/v3/files?q='1LGsMd8eSuEQDwnxwaM5Gd_oOQXOEMFfO'+in+parents+and+mimeType+contains+'image/'&key=AIzaSyDJe7_geLOE5s8tmrmg96Sl992IlhznDmg&fields=files(id,name,mimeType)`;
 
     fetch(apiUrl)
       .then(response => response.json())
