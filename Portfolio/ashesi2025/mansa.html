@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Client Gallery</title>
+  <meta charset="UTF-8">
+  <title>Client Photo Gallery</title>
   <style>
     body {
       font-family: sans-serif;
-      background: #f9f9f9;
+      background: #f4f4f4;
       padding: 40px;
       text-align: center;
+    }
+    h1 {
+      margin-bottom: 30px;
     }
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
     }
     .gallery img {
       width: 250px;
-      height: auto;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .download-button {
+      margin-top: 40px;
+      display: inline-block;
+      padding: 14px 24px;
+      background-color: #000;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+
   <h1>Your Photos Are Ready 📸</h1>
+
   <div id="gallery" class="gallery"></div>
 
+  <!-- OPTIONAL Download ZIP button if you upload one -->
+  <!--
+  <a class="download-button" href="https://drive.google.com/uc?export=download&id=ZIP_FILE_ID_HERE" target="_blank">⬇ Download All Photos (ZIP)</a>
+  -->
+
   <script>
-    const folderId = "1LGsMd8eSuEQDwnxwaM5Gd_oOQXOEMFfO"; // Your real folder ID
-    const apiKey = "AIzaSyDJe7_geLOE5s8tmrmg96Sl992IlhznDmg"; // Your real API key
+    const folderId = "1LGsMd8eSuEQDwnxwaM5Gd_oOQXOEMFfO";
+    const apiKey = "AIzaSyDJe7_geLOE5s8tmrmg96Sl992IlhznDmg";
 
     const apiUrl = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+mimeType+contains+'image/'&key=${apiKey}&fields=files(id,name,mimeType)`;
 
     fetch(apiUrl)
-      .then(res => res.json())
+      .then(response => response.json())
       .then(data => {
         const gallery = document.getElementById('gallery');
         if (!data.files || data.files.length === 0) {
@@ -49,10 +68,11 @@
           gallery.appendChild(img);
         });
       })
-      .catch(err => {
-        document.getElementById('gallery').innerHTML = `<p>Error loading images. Make sure folder is public.</p>`;
-        console.error(err);
+      .catch(error => {
+        console.error('Error fetching images:', error);
+        document.getElementById('gallery').innerHTML = '<p>Error loading images. Make sure the folder is public.</p>';
       });
   </script>
+
 </body>
 </html>
