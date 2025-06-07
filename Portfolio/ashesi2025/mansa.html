@@ -23,54 +23,47 @@
       width: 250px;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .download-button {
-      margin-top: 40px;
-      display: inline-block;
-      padding: 14px 24px;
-      background-color: #000;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
 
   <h1>Your Photos Are Ready 📸</h1>
-
   <div id="gallery" class="gallery"></div>
-
-  <!-- OPTIONAL Download ZIP button if you upload one -->
-  <!--
-  <a class="download-button" href="https://drive.google.com/uc?export=download&id=ZIP_FILE_ID_HERE" target="_blank">⬇ Download All Photos (ZIP)</a>
-  -->
 
   <script>
     const folderId = "1LGsMd8eSuEQDwnxwaM5Gd_oOQXOEMFfO";
     const apiKey = "AIzaSyDJe7_geLOE5s8tmrmg96Sl992IlhznDmg";
 
-    const apiUrl = `https://www.googleapis.com/drive/v3/files?q='1LGsMd8eSuEQDwnxwaM5Gd_oOQXOEMFfO'+in+parents+and+mimeType+contains+'image/'&key=AIzaSyDJe7_geLOE5s8tmrmg96Sl992IlhznDmg&fields=files(id,name,mimeType)`;
+    const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+mimeType+contains+'image/' and trashed=false&key=${apiKey}&fields=files(id,name,thumbnailLink,webContentLink)`;
 
-    fetch(apiUrl)
-      .then(response => response.json())
+    fetch(url)
+      .then(res => res.json())
       .then(data => {
-        const gallery = document.getElementById('gallery');
+        const gallery = document.getElementById("gallery");
         if (!data.files || data.files.length === 0) {
           gallery.innerHTML = '<p>No images found or folder is not shared publicly.</p>';
           return;
         }
+
         data.files.forEach(file => {
-          const img = document.createElement('img');
-          img.src = `https://drive.google.com/uc?export=view&id=${file.id}`;
+          const link = document.createElement("a");
+          link.href = `https://drive.google.com/uc?export=download&id=${file.id}`;
+          link.target = "_blank";
+          link.download = file.name;
+
+          const img = document.createElement("img");
+          img.src = file.thumbnailLink;
           img.alt = file.name;
-          gallery.appendChild(img);
+
+          link.appendChild(img);
+          gallery.appendChild(link);
         });
       })
       .catch(error => {
-        console.error('Error fetching images:', error);
-        document.getElementById('gallery').innerHTML = '<p>Error loading images. Make sure the folder is public.</p>';
+        console.error("Error loading images:", error);
+        document.getElementById("gallery").innerHTML = '<p>Error loading images. Make sure the folder is public and the API key is valid.</p>';
       });
   </script>
 
